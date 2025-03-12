@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 
-import Header from "../header";
-import RandomPlanet from "../random-planet";
-import PersonDetails from "../person-details";
+import Header from '../header'
+import RandomPlanet from '../random-planet'
 
 import "./app.css";
 import ItemList from "../item-list/item-list";
@@ -29,7 +28,7 @@ export default class App extends Component {
 			return (
 			    <div>
                 <Header/>
-                <RandomPlanet/>
+                <RandomPlanet />
                 <PeoplePage />
             </div>
         )
