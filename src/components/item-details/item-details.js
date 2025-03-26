@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import './item-details.css';
+import './item-details.css'
 import SwapiService from "../../services/swapi-service"
 import Spinner from "../spinner"
 
@@ -58,8 +58,8 @@ export default class ItemDetails extends Component {
 
 	render() {
 
-		if (!this.state.item)
-			return <span>Select a person from a list</span>
+        if (!this.state.item)
+            return <span>Select an item from a list</span>
 
 		const { item, image, loading } = this.state
 
@@ -67,23 +67,23 @@ export default class ItemDetails extends Component {
 
 		const content = !loading ? <ItemDetailsView item={item} image={image} context={this.props.children} /> : null
 
-		return (
-			<div className="person-details card">
-				{spinner}
-				{content}
-			</div>
-		)
-	}
+        return (
+            <div className="item-details card">
+                { spinner }
+                { content }
+            </div>
+        )
+    }
 }
 
 const ItemDetailsView = ({ item, image, context }) => {
 
-	const { name } = item
+    const { name, type } = item
 
-	return (
-		<React.Fragment>
-			<img className="person-image" alt="person image"
-				src={image} />
+    return (
+        <React.Fragment>
+            <img className="item-image" alt={`~-~${type}~-~`}
+                 src={ image } />
 
 			<div className="card-body">
 				<h4>{name}</h4>
