@@ -10,7 +10,7 @@ import { SwapiServiceProvider } from '../swapi-service-context'
 import SwapiService from "../../services/swapi-service"
 import { PeoplePage, PlanetsPage, StarshipsPage, LoginPage, SecretPage } from "../pages"
 
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import StarshipDetails from "../sw-components/starship-details";
 
 export default class App extends Component {
@@ -62,6 +62,7 @@ export default class App extends Component {
 								<Route path="/secret" render={() => (
 									<SecretPage isLoggedIn={isLoggedIn} />
 								)} exact />
+								<Route path="/planets/:id?" component={PlanetsPage} exact />
 
 								<Route render={() => <h4>Page not found</h4>} />
 							</Switch>
