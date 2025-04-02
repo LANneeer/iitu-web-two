@@ -4,7 +4,7 @@ import Header from '../header'
 import RandomPlanet from '../random-planet'
 
 import './app.css'
-import ErrorIndicator from "../error-indicator"
+import { ErrorIndicator, NotFoundIndicator } from "../errors"
 import ErrorBoundary from "../error-boundary"
 import { SwapiServiceProvider } from '../swapi-service-context'
 import SwapiService from "../../services/swapi-service"
@@ -62,9 +62,8 @@ export default class App extends Component {
 								<Route path="/secret" render={() => (
 									<SecretPage isLoggedIn={isLoggedIn} />
 								)} exact />
-								<Route path="/planets/:id?" component={PlanetsPage} exact />
 
-								<Route render={() => <h4>Page not found</h4>} />
+								<Route component={NotFoundIndicator} />
 							</Switch>
 						</div>
 					</Router>
